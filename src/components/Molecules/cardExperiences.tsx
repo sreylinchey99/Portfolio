@@ -29,7 +29,7 @@ function CardExperiences({position, companyName, description, skills, startDate,
                             transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
                         }
                         .cardExperiencesContainer:hover {   
-                            background-color: rgba(100, 36, 36, 0.1);
+                            background-color: rgba(99, 46, 46, 0.3);
                             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
                         }
                         .cardExperiencesContainer:hover .image-card-project {
