@@ -24,9 +24,14 @@ function CardExperiences({position, companyName, description, skills, startDate,
                             width: 100%;
                             max-width: 100%;
                             box-sizing: border-box;
-                            padding: 15px 15px;
+                            padding: 15px;
                             border-radius: 8px;
                             transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                            overflow: hidden;
+                            min-width: 0;
+                        }
+                        .cardExperiencesContainer > * {
+                            min-width: 0;
                         }
                         .cardExperiencesContainer:hover {   
                             background-color: rgba(99, 46, 46, 0.3);
@@ -38,10 +43,24 @@ function CardExperiences({position, companyName, description, skills, startDate,
                         .cardExperiencesContainer:hover .work-period p {
                             opacity: 1;
                         }
-                        @media (max-width: 768px) {
+                        @media (max-width: 960px) {
                             .cardExperiencesContainer {
                                 flex-direction: column;
                                 gap: 12px;
+                                padding: 12px;
+                            }
+                        }
+                        @media (max-width: 768px) {
+                            .cardExperiencesContainer {
+                                flex-direction: column;
+                                gap: 10px;
+                                padding: 10px;
+                            }
+                        }
+                        @media (max-width: 480px) {
+                            .cardExperiencesContainer {
+                                gap: 8px;
+                                padding: 8px;
                             }
                         }
                     `

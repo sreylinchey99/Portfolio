@@ -23,6 +23,17 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                     width: 100%;
                     max-width: 100%;
                     box-sizing: border-box;
+                    min-width: 0;
+                    flex: 1;
+                    overflow: hidden;
+                }
+                .experiences-card-detail-content {
+                    width: 100%;
+                    max-width: 100%;
+                    box-sizing: border-box;
+                    min-width: 0;
+                    overflow-wrap: break-word;
+                    word-wrap: break-word;
                 }
                 .experiences-card-detail h3 {
                     font-size: 18px;
@@ -34,6 +45,8 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                     font-size: 14px;
                     opacity: 0.6;
                     transition: opacity 0.2s ease-in-out;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
                 }
                 .position-company {
                     display: flex;
@@ -42,9 +55,16 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                     gap: 8px;
                     flex-wrap: wrap;
                 }
+                @media (max-width: 960px) {
+                    .experiences-card-detail {
+                        gap: 8px;
+                        width: 100%;
+                    }
+                }
                 @media (max-width: 768px) {
                     .experiences-card-detail {
                         gap: 8px;
+                        width: 100%;
                     }
                     .experiences-card-detail h3 {
                         font-size: 16px;

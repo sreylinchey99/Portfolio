@@ -40,6 +40,33 @@ function App() {
           padding: 30px;
           height: calc(100vh - 60px);
           overflow: hidden;
+          gap: 20px;
+          margin-left: 10rem;
+          margin-right: 10rem;
+          max-width: calc(100% - 20rem);
+        }
+        @media (max-width: 1600px) {
+          .container {
+            margin-left: 6rem;
+            margin-right: 6rem;
+            max-width: calc(100% - 12rem);
+          }
+        }
+        @media (max-width: 1400px) {
+          .container {
+            padding: 20px;
+            gap: 15px;
+            margin-left: 4rem;
+            margin-right: 4rem;
+            max-width: calc(100% - 8rem);
+          }
+        }
+        @media (max-width: 1200px) {
+          .container {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            max-width: calc(100% - 4rem);
+          }
         }
         @media (max-width: 960px) {
           .container {
@@ -48,6 +75,10 @@ function App() {
             height: auto;
             min-height: 100vh;
             overflow: visible;
+            gap: 0;
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 100%;
           }
         }
         @media (max-width: 480px) {

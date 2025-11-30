@@ -186,7 +186,6 @@ function DetailIntoPage({ selectedSection: _selectedSection, onRefsReady, onSect
           height: 100%;
           overflow-y: auto;
           overflow-x: hidden;
-          margin-right: 18rem;
           scrollbar-width: none; 
           -ms-overflow-style: none; 
         }
@@ -201,10 +200,15 @@ function DetailIntoPage({ selectedSection: _selectedSection, onRefsReady, onSect
             display: none;
           }
         }
-        @media (min-width: 961px) and (max-width: 1200px) {
+        @media (min-width: 961px) and (max-width: 1400px) {
           .detail-into-page {
             padding: 15px;
             gap: 40px;
+          }
+        }
+        @media (min-width: 1401px) {
+          .detail-into-page {
+            padding: 20px 40px 20px 20px;
           }
         }
       `}</style>
