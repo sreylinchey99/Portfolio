@@ -9,22 +9,29 @@ function AboutContent() {
           padding-top: 20px;
           padding-bottom: 0;
         }
-        .about-content h3 {
-          font-size: 1.5em;
+        .about-content h4 {
+          font-size: 1em;
+          opacity: 0.8;
+        }
+        .about-content h4:hover {
+          opacity: 1;
         }
         .about-content p {
           margin: 0;
           line-height: 1.6;
-          opacity: 0.9;
+          opacity: 0.8;
+        }
+        .about-content p:hover {
+          opacity: 1;
         }
         @media (max-width: 960px) {
           .about-content {
             gap: 12px;
             padding-top: 15px;
           }
-          .about-content h3 {
-            font-size: 1.3em;
-          }
+            .about-content h4 {
+              font-size: 1.3em;
+            }
           .about-content p {
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -44,7 +51,7 @@ function AboutContent() {
           }
         }
       `}</style>
-      <h3>ABOUT</h3>
+      <h4>ABOUT</h4>
       <div className='about-content'>
         <p>
           I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.

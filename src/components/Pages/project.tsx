@@ -3,16 +3,17 @@ import ProjectContent from './ProjectContent'
 
 interface ProjectProps {
   onScrollClick?: () => void;
+  isActive?: boolean;
 }
 
-function Project({ onScrollClick }: ProjectProps) {
+function Project({ onScrollClick, isActive = false }: ProjectProps) {
   return (
     <div className='project-section'>
       <style>{`
         .project-section {
           display: flex;
           flex-direction: column;
-          padding-bottom: 50px;
+          padding-bottom: 20px;
         }
         .project-section-content {
           display: none;
@@ -40,7 +41,7 @@ function Project({ onScrollClick }: ProjectProps) {
           }
         }
       `}</style>
-      <SectionHeader title="PROJECTS" onClick={onScrollClick} />
+      <SectionHeader title="PROJECTS" onClick={onScrollClick} isActive={isActive} />
       <div className='project-section-content'>
         <ProjectContent />
       </div>

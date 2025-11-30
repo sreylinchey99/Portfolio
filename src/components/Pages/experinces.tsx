@@ -3,16 +3,17 @@ import ExperincesContent from './ExperincesContent'
 
 interface ExperincesProps {
   onScrollClick?: () => void;
+  isActive?: boolean;
 }
 
-function Experinces({ onScrollClick }: ExperincesProps) {
+function Experinces({ onScrollClick, isActive = false }: ExperincesProps) {
   return (
     <div className='experinces-section'>
       <style>{`
         .experinces-section {
           display: flex;
           flex-direction: column;
-          padding-bottom: 50px;
+          padding-bottom: 20px;
         }
         .experinces-section-content {
           display: none;
@@ -40,7 +41,7 @@ function Experinces({ onScrollClick }: ExperincesProps) {
           }
         }
       `}</style>
-      <SectionHeader title="EXPERIENCES" onClick={onScrollClick} />
+      <SectionHeader title="EXPERIENCES" onClick={onScrollClick} isActive={isActive} />
       <div className='experinces-section-content'>
         <ExperincesContent />
       </div>

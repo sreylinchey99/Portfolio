@@ -1,16 +1,17 @@
 interface SectionHeaderProps {
   title: string;
   onClick?: () => void;
+  isActive?: boolean;
 }
 
-function SectionHeader({ title, onClick }: SectionHeaderProps) {
+function SectionHeader({ title, onClick, isActive = false }: SectionHeaderProps) {
   return (
     <>
       <style>{`
         .section-header {
           display: flex;
           flex-direction: row;
-          gap: 20px;
+          gap: 15px;
           align-items: center;
           cursor: pointer;
         }
@@ -26,18 +27,27 @@ function SectionHeader({ title, onClick }: SectionHeaderProps) {
         }
         .section-header p {  
           margin: 0;
-          line-height: 1;
+          line-height: 1.2;
           opacity: 0.5;
+          font-size: 0.9em;
+          // padding-bottom: 25px;
           transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
         }
-        .section-header:hover hr,
-        .section-header:active hr {
+        .section-header.active hr {
           width: 13%;
           opacity: 1;
           background-color: rgb(250, 250, 250);
         }
-        .section-header:hover p,
-        .section-header:active p {
+        .section-header.active p {
+          opacity: 1;
+          color: rgb(250, 250, 250);
+        }
+        .section-header:hover hr {
+          width: 13%;
+          opacity: 1;
+          background-color: rgb(250, 250, 250);
+        }
+        .section-header:hover p {
           opacity: 1;
           color: rgb(250, 250, 250);
         }
@@ -47,7 +57,7 @@ function SectionHeader({ title, onClick }: SectionHeaderProps) {
           }
         }
       `}</style>
-      <div className='section-header' onClick={onClick}>
+      <div className={`section-header ${isActive ? 'active' : ''}`} onClick={onClick}>
         <hr />
         <p>{title}</p>
       </div>

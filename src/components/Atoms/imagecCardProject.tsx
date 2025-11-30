@@ -10,15 +10,15 @@ function ImageCardProject({image}: ImageCardProjectProps) {
                     .image-card-project {
                         border-radius: 10px;
                         border: 2px solid rgb(151, 7, 7);
-                        opacity: 0.8;
-                        width: 250px;
-                        height: 150px;
+                        opacity: 0.6;
+                        width: 200px;
+                        height: 120px;
                         overflow: hidden;
                         flex-shrink: 0;
-                        margin-top: 12px;
+                        margin-top: 27px;
                         box-sizing: border-box;
                         box-shadow: 0 0 10px 0 rgba(180, 56, 56, 0.5);
-                        transition: box-shadow 0.2s ease-in-out;
+                        transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
                     }   
 
                     .image-card-project img {

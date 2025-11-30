@@ -30,8 +30,10 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                 .experiences-card-detail h4 {
                     font-size: 16px;
                 }
-                .experiences-card-detail p {
+                .experiences-card-detail-content > p {
                     font-size: 14px;
+                    opacity: 0.6;
+                    transition: opacity 0.2s ease-in-out;
                 }
                 .position-company {
                     display: flex;
@@ -50,7 +52,7 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                     .experiences-card-detail h4 {
                         font-size: 14px;
                     }
-                    .experiences-card-detail p {
+                    .experiences-card-detail-content > p {
                         font-size: 13px;
                     }
                     .position-company {
@@ -64,9 +66,27 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                     .experiences-card-detail h4 {
                         font-size: 13px;
                     }
-                    .experiences-card-detail p {
+                    .experiences-card-detail-content > p {
                         font-size: 12px;
                     }
+                }
+                .position-company h4{
+                   font-size: 17px;
+                   transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+                }
+                .position-company p:not(:first-of-type) {
+                   transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+                }
+                .cardExperiencesContainer:hover .position-company h4,
+                .cardExperiencesContainer:hover .position-company p:not(:first-of-type){
+                    opacity: 1;
+                    color: rgb(209, 24, 24);
+                }
+                .cardExperiencesContainer:hover .position-company h4{
+                    font-weight: 700;
+                }
+                .cardExperiencesContainer:hover .experiences-card-detail-content > p {
+                    opacity: 1;
                 }
             `}</style>
             <div className='experiences-card-detail'>

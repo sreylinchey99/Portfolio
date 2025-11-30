@@ -48,7 +48,7 @@ export default function Spotlight() {
           z-index: 999;
           mix-blend-mode: difference;
           background: radial-gradient(
-            55rem circle at var(--x, 50%) var(--y, 50%),
+            60rem circle at var(--x, 50%) var(--y, 50%),
             rgba(255, 255, 255, 0.15),
             transparent 60%
           );

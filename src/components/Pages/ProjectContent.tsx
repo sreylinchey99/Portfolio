@@ -13,7 +13,11 @@ function ProjectContent() {
             padding-top: 0;
           }
           .project-content h3 {
-            font-size: 1.5em;
+            font-size: 1em;
+            opacity: 0.8;
+          }
+          .project-content h3:hover {
+            opacity: 1;
           }
           .cardExperiencesContainer {
             opacity: 0.8;
@@ -43,7 +47,7 @@ function ProjectContent() {
           }
         `}
       </style>
-      <h3>PROJECTS</h3>
+      <h4>PROJECTS</h4>
       <div className='cardExperiencesContainer'>
         <ImageCardProject image='https://www.tomorrowsworldtoday.com/wp-content/uploads/2023/04/Worlds-First-AI-Generated-Art-Gallery-in-Amsterdam.jpg' />
         <CardExperiences 

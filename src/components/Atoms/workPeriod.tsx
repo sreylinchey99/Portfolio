@@ -6,7 +6,6 @@ interface WorkPeriodProps {
 function WorkPeriod({startDate, endDate}: WorkPeriodProps) {
   return (
     <>
-
         <style>{`
         .work-period {
             display: flex;
@@ -14,11 +13,13 @@ function WorkPeriod({startDate, endDate}: WorkPeriodProps) {
             gap: 10px;
             white-space: nowrap;
             min-width: fit-content;
-            padding-top: 5px;
-            padding-right: 7rem;
+            padding-top: 2px;
+            padding-right: 3rem;
         }
         .work-period p {
             font-size: 14px;
+            opacity: 0.6;
+            transition: opacity 0.2s ease-in-out;
         }
         @media (max-width: 768px) {
             .work-period {
