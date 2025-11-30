@@ -32,20 +32,20 @@ function IntroductionPage({ onSectionClick: _onSectionClick, selectedSection, sc
           height: 100%;
           overflow: hidden;
           position: relative;
-          margin-left: 18rem;
           z-index: 1000;
           padding-top: 5rem;
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 1400px) {
           .introduction-page {
-            margin-left: 12rem;
+            padding: 20px 15px;
+            padding-top: 5rem;
           }
         }
         @media (max-width: 960px) {
           .introduction-page {
             width: 100%;
             padding: 15px;
-            margin-left: 0;
+            padding-top: 2rem;
             height: auto;
             overflow: visible;
           }

@@ -33,9 +33,22 @@ function Skills({skills}: SkillsProps) {
                     opacity: 1;
                     color: rgb(209, 24, 24);
                 }
+                @media (max-width: 960px) {
+                    .skills-wrapper {
+                        gap: 8px;
+                        padding-top: 12px;
+                    }
+                    .skills-container {
+                        padding: 6px 10px;
+                    }
+                    .skills-container p {
+                        font-size: 12px;
+                    }
+                }
                 @media (max-width: 768px) {
                     .skills-wrapper {
                         gap: 8px;
+                        padding-top: 10px;
                     }
                     .skills-container {
                         padding: 6px 10px;
