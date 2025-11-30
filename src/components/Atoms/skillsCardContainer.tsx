@@ -13,7 +13,7 @@ function Skills({skills}: SkillsProps) {
                     width: 100%;
                     max-width: 100%;
                     padding-top: 15px;
-                    padding-bottom: 25px;
+                    padding-bottom: 10px;
                 }
                 .skills-container {
                     background-color: rgba(129, 11, 11, 0.3);
@@ -27,6 +27,11 @@ function Skills({skills}: SkillsProps) {
                     margin: 0;
                     font-weight: 700;
                     white-space: nowrap;
+                    transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+                }
+                .cardExperiencesContainer:hover .skills-container p {
+                    opacity: 1;
+                    color: rgb(209, 24, 24);
                 }
                 @media (max-width: 768px) {
                     .skills-wrapper {

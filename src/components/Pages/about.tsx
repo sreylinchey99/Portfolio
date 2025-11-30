@@ -3,16 +3,17 @@ import AboutContent from './AboutContent'
 
 interface AboutProps {
   onScrollClick?: () => void;
+  isActive?: boolean;
 }
 
-function About({ onScrollClick }: AboutProps) {
+function About({ onScrollClick, isActive = false }: AboutProps) {
   return (
     <div className='about-section'>
       <style>{`
         .about-section {
           display: flex;
           flex-direction: column;
-          padding-bottom: 50px;
+          padding-bottom: 20px;
           padding-top: 70px;
         }
         .about-section-content {
@@ -45,7 +46,8 @@ function About({ onScrollClick }: AboutProps) {
       `}</style>
       <SectionHeader 
         title="ABOUT" 
-        onClick={onScrollClick} 
+        onClick={onScrollClick}
+        isActive={isActive}
       />
       <div className='about-section-content'>
         <AboutContent />

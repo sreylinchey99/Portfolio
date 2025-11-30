@@ -14,18 +14,21 @@ interface SectionRefs {
 }
 
 function App() {
-  const [selectedSection, setSelectedSection] = useState<Section>('about')
+  const [selectedSection, setSelectedSection] = useState<Section>(null)
   const [sectionRefs, setSectionRefs] = useState<SectionRefs | null>(null)
 
   const scrollToAbout = () => {
+    setSelectedSection('about')
     sectionRefs?.aboutRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const scrollToExperiences = () => {
+    setSelectedSection('experiences')
     sectionRefs?.experiencesRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const scrollToProject = () => {
+    setSelectedSection('project')
     sectionRefs?.projectRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -57,6 +60,7 @@ function App() {
         <Spotlight />
         <IntroductionPage 
           onSectionClick={setSelectedSection}
+          selectedSection={selectedSection}
           scrollToAbout={scrollToAbout}
           scrollToExperiences={scrollToExperiences}
           scrollToProject={scrollToProject}
@@ -64,6 +68,7 @@ function App() {
         <DetailIntoPage 
           selectedSection={selectedSection}
           onRefsReady={setSectionRefs}
+          onSectionChange={setSelectedSection}
         />
       </div>
     </>

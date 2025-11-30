@@ -24,6 +24,19 @@ function CardExperiences({position, companyName, description, skills, startDate,
                             width: 100%;
                             max-width: 100%;
                             box-sizing: border-box;
+                            padding: 15px 15px;
+                            border-radius: 8px;
+                            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                        }
+                        .cardExperiencesContainer:hover {   
+                            background-color: rgba(100, 36, 36, 0.1);
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                        }
+                        .cardExperiencesContainer:hover .image-card-project {
+                            opacity: 1;
+                        }
+                        .cardExperiencesContainer:hover .work-period p {
+                            opacity: 1;
                         }
                         @media (max-width: 768px) {
                             .cardExperiencesContainer {

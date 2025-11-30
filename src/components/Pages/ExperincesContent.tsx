@@ -8,15 +8,19 @@ function ExperincesContent() {
           .experiences-content {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            // gap: 20px;
             width: 100%;
             max-width: 100%;
             box-sizing: border-box;
             padding: 0;
             padding-top: 20px;
           }
-          .experiences-content h3 {
-            font-size: 1.5em;
+          .experiences-content h4 {
+            font-size: 1em;
+            opacity: 0.8;
+          }
+          .experiences-content h4:hover {
+            opacity: 1;
           }
           @media (max-width: 960px) {
             .experiences-content {
@@ -39,7 +43,7 @@ function ExperincesContent() {
           }
         `}
       </style>
-      <h3>EXPERIENCES</h3>
+      <h4>EXPERIENCES</h4>
       <CardExperiences 
         position = 'Frontend Developer' 
         companyName = 'Klaviyo' 
