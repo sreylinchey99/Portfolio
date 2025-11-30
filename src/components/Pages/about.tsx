@@ -12,6 +12,8 @@ function About({ onClick }: AboutProps) {
         .about-section {
           display: flex;
           flex-direction: column;
+          padding-bottom: 50px;
+          padding-top: 70px;
         }
         .about-section-content {
           display: none;

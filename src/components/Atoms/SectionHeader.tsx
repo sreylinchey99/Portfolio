@@ -15,7 +15,7 @@ function SectionHeader({ title, onClick }: SectionHeaderProps) {
           cursor: pointer;
         }
         .section-header hr {
-          width: 15%;
+          width: 8%;
           height: 2px;
           border: none;
           opacity: 0.5;
@@ -32,7 +32,7 @@ function SectionHeader({ title, onClick }: SectionHeaderProps) {
         }
         .section-header:hover hr,
         .section-header:active hr {
-          width: 25%;
+          width: 13%;
           opacity: 1;
           background-color: rgb(250, 250, 250);
         }
@@ -40,6 +40,11 @@ function SectionHeader({ title, onClick }: SectionHeaderProps) {
         .section-header:active p {
           opacity: 1;
           color: rgb(250, 250, 250);
+        }
+        @media (max-width: 960px) {
+          .section-header {
+            display: none;
+          }
         }
       `}</style>
       <div className='section-header' onClick={onClick}>

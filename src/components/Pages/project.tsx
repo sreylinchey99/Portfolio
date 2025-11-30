@@ -12,6 +12,7 @@ function Project({ onClick }: ProjectProps) {
         .project-section {
           display: flex;
           flex-direction: column;
+          padding-bottom: 50px;
         }
         .project-section-content {
           display: none;

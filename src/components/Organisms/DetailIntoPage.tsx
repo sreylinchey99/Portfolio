@@ -30,7 +30,7 @@ function DetailIntoPage({ selectedSection }: DetailIntoPageProps) {
         {selectedSection === 'about' && <AboutContent />}
         {selectedSection === 'project' && <ProjectContent />}
         {selectedSection === 'experiences' && <ExperincesContent />}
-        {selectedSection === null && <AboutContent />}
+        {/* {selectedSection === null && <AboutContent />} */}
       </div>
     </>
   )
