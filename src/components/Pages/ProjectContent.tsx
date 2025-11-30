@@ -10,14 +10,35 @@ function ProjectContent() {
             display: flex;
             flex-direction: column;
             gap: 16px;
+            padding-top: 0;
+          }
+          .project-content h3 {
+            font-size: 1.5em;
           }
           .cardExperiencesContainer {
             opacity: 0.8;
             padding-top: 20px;
           }
-          @media (max-width: 768px) {
+          @media (max-width: 960px) {
             .project-content {
-              flex-direction: column;
+              gap: 12px;
+            }
+            .project-content h3 {
+              font-size: 1.3em;
+            }
+            .cardExperiencesContainer {
+              padding-top: 15px;
+            }
+          }
+          @media (max-width: 480px) {
+            .project-content {
+              gap: 10px;
+            }
+            .project-content h3 {
+              font-size: 1.1em;
+            }
+            .cardExperiencesContainer {
+              padding-top: 12px;
             }
           }
         `}

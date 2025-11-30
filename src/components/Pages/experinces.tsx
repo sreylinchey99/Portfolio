@@ -2,10 +2,10 @@ import SectionHeader from '../Atoms/SectionHeader'
 import ExperincesContent from './ExperincesContent'
 
 interface ExperincesProps {
-  onClick?: () => void;
+  onScrollClick?: () => void;
 }
 
-function Experinces({ onClick }: ExperincesProps) {
+function Experinces({ onScrollClick }: ExperincesProps) {
   return (
     <div className='experinces-section'>
       <style>{`
@@ -18,9 +18,20 @@ function Experinces({ onClick }: ExperincesProps) {
           display: none;
         }
         @media (max-width: 960px) {
+          .experinces-section {
+            padding-bottom: 30px;
+          }
           .experinces-section-content {
             display: block;
             margin-top: 20px;
+          }
+        }
+        @media (max-width: 480px) {
+          .experinces-section {
+            padding-bottom: 20px;
+          }
+          .experinces-section-content {
+            margin-top: 15px;
           }
         }
         @media (min-width: 961px) {
@@ -29,7 +40,7 @@ function Experinces({ onClick }: ExperincesProps) {
           }
         }
       `}</style>
-      <SectionHeader title="EXPERIENCES" onClick={onClick} />
+      <SectionHeader title="EXPERIENCES" onClick={onScrollClick} />
       <div className='experinces-section-content'>
         <ExperincesContent />
       </div>

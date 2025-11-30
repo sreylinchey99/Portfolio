@@ -7,6 +7,10 @@ function AboutContent() {
           flex-direction: column;
           gap: 16px;
           padding-top: 20px;
+          padding-bottom: 0;
+        }
+        .about-content h3 {
+          font-size: 1.5em;
         }
         .about-content p {
           margin: 0;
@@ -16,11 +20,27 @@ function AboutContent() {
         @media (max-width: 960px) {
           .about-content {
             gap: 12px;
+            padding-top: 15px;
+          }
+          .about-content h3 {
+            font-size: 1.3em;
           }
           .about-content p {
             word-wrap: break-word;
             overflow-wrap: break-word;
             font-size: 0.95em;
+          }
+        }
+        @media (max-width: 480px) {
+          .about-content {
+            gap: 10px;
+            padding-top: 12px;
+          }
+          .about-content h3 {
+            font-size: 1.1em;
+          }
+          .about-content p {
+            font-size: 0.9em;
           }
         }
       `}</style>

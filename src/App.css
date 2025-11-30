@@ -1,8 +1,13 @@
 #root {
   width: 100%;
   margin: 0;
-  padding: 30px;
+  padding: 0;
   text-align: center;
+}
+@media (max-width: 960px) {
+  #root {
+    padding: 0;
+  }
 }
 
 .logo {
@@ -41,18 +46,4 @@
   color: #888;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: 100vh;
-  gap: 0;
-}
-
-/* When screen width is smaller than 960px (tablet/mobile) */
-@media(max-width: 960px) {  
-  .container {
-    flex-direction: column;
-    width: 100%;
-  }
-}
+/* Container styles are now in App.tsx inline styles for better control */
