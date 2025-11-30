@@ -7,9 +7,12 @@ type Section = 'about' | 'project' | 'experiences' | null
 
 interface IntroductionPageProps {
   onSectionClick: (section: Section) => void;
+  scrollToAbout: () => void;
+  scrollToExperiences: () => void;
+  scrollToProject: () => void;
 }
 
-function IntroductionPage({ onSectionClick }: IntroductionPageProps) {
+function IntroductionPage({ onSectionClick: _onSectionClick, scrollToAbout, scrollToExperiences, scrollToProject }: IntroductionPageProps) {
   return (
     <>
       <style>{`
@@ -17,19 +20,35 @@ function IntroductionPage({ onSectionClick }: IntroductionPageProps) {
           text-align: left;
           vertical-align: top;
         }
-        .introduction-page {
+        .introduction-page {  
           flex: 1;
           width: 50%;
-          /* background-color: #5a1b1b; */
-          /* border-radius: 10px; */
           border-color: #78dd9a;
           padding: 20px;
           box-sizing: border-box;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+          margin-left: 18rem;
+          z-index: 1000;
+        }
+        @media (max-width: 1200px) {
+          .introduction-page {
+            margin-left: 12rem;
+          }
         }
         @media (max-width: 960px) {
           .introduction-page {
             width: 100%;
             padding: 15px;
+            margin-left: 0;
+            height: auto;
+            overflow: visible;
+          }
+        }
+        @media (max-width: 480px) {
+          .introduction-page {
+            padding: 10px;
           }
         }
         .TopInto {
@@ -39,20 +58,50 @@ function IntroductionPage({ onSectionClick }: IntroductionPageProps) {
         .TopInto h1 {
           margin: 0 0 8px 0;
           line-height: 1.2;
+          font-size: 3.2em;
         }
         .TopInto h3 {
           margin: 0 0 8px 0;
           line-height: 1.2;
+          font-size: 1.5em;
         }
         .TopInto p {
           margin: 0;
           line-height: 1.4;
+          font-size: 1em;
+        }
+        @media (max-width: 960px) {
+          .TopInto h1 {
+            font-size: 2.5em;
+          }
+          .TopInto h3 {
+            font-size: 1.3em;
+          }
+          .TopInto p {
+            font-size: 0.95em;
+          }
+        }
+        @media (max-width: 480px) {
+          .TopInto h1 {
+            font-size: 2em;
+          }
+          .TopInto h3 {
+            font-size: 1.1em;
+          }
+          .TopInto p {
+            font-size: 0.9em;
+          }
         }
         .ContactInfo{
           display: flex;
           flex-direction: row;
           gap: 20px;
           flex-wrap: wrap;
+          justify-content: flex-end;
+          z-index: 1000;
+          bottom: 10px;
+          position: absolute;
+          padding-bottom: 10rem;
         }
         .ContactInfo a {
           display: flex;
@@ -63,6 +112,29 @@ function IntroductionPage({ onSectionClick }: IntroductionPageProps) {
           opacity: 0.7;
           scale: 1.5;
           padding:30px 10px 10px 5px;
+        }
+        @media (max-width: 960px) {
+          .ContactInfo {
+            position: relative;
+            bottom: auto;
+            padding-bottom: 20px;
+            justify-content: flex-start;
+            margin-top: 20px;
+          }
+          .ContactInfo a {
+            scale: 1.2;
+            padding: 10px;
+          }
+        }
+        @media (max-width: 480px) {
+          .ContactInfo {
+            gap: 15px;
+            padding-bottom: 15px;
+          }
+          .ContactInfo a {
+            scale: 1.1;
+            padding: 8px;
+          }
         } 
         .ContactInfo a:hover {
           opacity: 1;
@@ -72,6 +144,18 @@ function IntroductionPage({ onSectionClick }: IntroductionPageProps) {
           flex-direction: column;
           gap: 20px;
           padding:50px 0px 0px 0px;
+        }
+        @media (max-width: 960px) {
+          .detail-into-page-container {
+            padding: 30px 0px 0px 0px;
+            gap: 15px;
+          }
+        }
+        @media (max-width: 480px) {
+          .detail-into-page-container {
+            padding: 20px 0px 0px 0px;
+            gap: 12px;
+          }
         }
 
       `}</style>
@@ -89,9 +173,9 @@ function IntroductionPage({ onSectionClick }: IntroductionPageProps) {
         </div>
 
         <div className='detail-into-page-container'>
-          <About onClick={() => onSectionClick('about')} />
-          <Experinces onClick={() => onSectionClick('experiences')} />
-          <Project onClick={() => onSectionClick('project')} />
+          <About onScrollClick={scrollToAbout} />
+          <Experinces onScrollClick={scrollToExperiences} />
+          <Project onScrollClick={scrollToProject} />
         </div>
       </div>
     </>

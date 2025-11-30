@@ -2,10 +2,10 @@ import SectionHeader from '../Atoms/SectionHeader'
 import AboutContent from './AboutContent'
 
 interface AboutProps {
-  onClick?: () => void;
+  onScrollClick?: () => void;
 }
 
-function About({ onClick }: AboutProps) {
+function About({ onScrollClick }: AboutProps) {
   return (
     <div className='about-section'>
       <style>{`
@@ -19,9 +19,22 @@ function About({ onClick }: AboutProps) {
           display: none;
         }
         @media (max-width: 960px) {
+          .about-section {
+            padding-top: 40px;
+            padding-bottom: 30px;
+          }
           .about-section-content {
             display: block;
             margin-top: 20px;
+          }
+        }
+        @media (max-width: 480px) {
+          .about-section {
+            padding-top: 30px;
+            padding-bottom: 20px;
+          }
+          .about-section-content {
+            margin-top: 15px;
           }
         }
         @media (min-width: 961px) {
@@ -30,7 +43,10 @@ function About({ onClick }: AboutProps) {
           }
         }
       `}</style>
-      <SectionHeader title="ABOUT" onClick={onClick} />
+      <SectionHeader 
+        title="ABOUT" 
+        onClick={onScrollClick} 
+      />
       <div className='about-section-content'>
         <AboutContent />
       </div>

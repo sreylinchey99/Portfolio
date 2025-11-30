@@ -12,18 +12,29 @@ function ExperincesContent() {
             width: 100%;
             max-width: 100%;
             box-sizing: border-box;
-            padding: 0 20px;
+            padding: 0;
+            padding-top: 20px;
           }
-          @media (max-width: 768px) {
+          .experiences-content h3 {
+            font-size: 1.5em;
+          }
+          @media (max-width: 960px) {
             .experiences-content {
               gap: 16px;
-              padding: 0 16px;
+              padding: 0;
+              padding-top: 15px;
+            }
+            .experiences-content h3 {
+              font-size: 1.3em;
             }
           }
           @media (max-width: 480px) {
             .experiences-content {
               gap: 12px;
-              padding: 0 12px;
+              padding-top: 12px;
+            }
+            .experiences-content h3 {
+              font-size: 1.1em;
             }
           }
         `}

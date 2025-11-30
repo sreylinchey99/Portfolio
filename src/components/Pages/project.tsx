@@ -2,10 +2,10 @@ import SectionHeader from '../Atoms/SectionHeader'
 import ProjectContent from './ProjectContent'
 
 interface ProjectProps {
-  onClick?: () => void;
+  onScrollClick?: () => void;
 }
 
-function Project({ onClick }: ProjectProps) {
+function Project({ onScrollClick }: ProjectProps) {
   return (
     <div className='project-section'>
       <style>{`
@@ -18,9 +18,20 @@ function Project({ onClick }: ProjectProps) {
           display: none;
         }
         @media (max-width: 960px) {
+          .project-section {
+            padding-bottom: 30px;
+          }
           .project-section-content {
             display: block;
             margin-top: 20px;
+          }
+        }
+        @media (max-width: 480px) {
+          .project-section {
+            padding-bottom: 20px;
+          }
+          .project-section-content {
+            margin-top: 15px;
           }
         }
         @media (min-width: 961px) {
@@ -29,7 +40,7 @@ function Project({ onClick }: ProjectProps) {
           }
         }
       `}</style>
-      <SectionHeader title="PROJECTS" onClick={onClick} />
+      <SectionHeader title="PROJECTS" onClick={onScrollClick} />
       <div className='project-section-content'>
         <ProjectContent />
       </div>
