@@ -6,6 +6,7 @@ function AboutContent() {
           display: flex;
           flex-direction: column;
           gap: 16px;
+          padding-top: 20px;
         }
         .about-content p {
           margin: 0;
@@ -23,6 +24,7 @@ function AboutContent() {
           }
         }
       `}</style>
+      <h3>ABOUT</h3>
       <div className='about-content'>
         <p>
           I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.

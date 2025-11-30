@@ -12,6 +12,7 @@ function Experinces({ onClick }: ExperincesProps) {
         .experinces-section {
           display: flex;
           flex-direction: column;
+          padding-bottom: 50px;
         }
         .experinces-section-content {
           display: none;

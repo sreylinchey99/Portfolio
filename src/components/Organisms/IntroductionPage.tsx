@@ -90,8 +90,8 @@ function IntroductionPage({ onSectionClick }: IntroductionPageProps) {
 
         <div className='detail-into-page-container'>
           <About onClick={() => onSectionClick('about')} />
-          <Project onClick={() => onSectionClick('project')} />
           <Experinces onClick={() => onSectionClick('experiences')} />
+          <Project onClick={() => onSectionClick('project')} />
         </div>
       </div>
     </>
