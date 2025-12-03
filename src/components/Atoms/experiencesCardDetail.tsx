@@ -1,3 +1,4 @@
+import React from 'react'
 import Skills from './skillsCardContainer'
 
 interface ExperiencesCardDetailPros{
@@ -5,6 +6,38 @@ interface ExperiencesCardDetailPros{
     companyName?: string;
     description: string;
     skills: string[];
+}
+
+function highlightKeywords(text: string, keywords: string[]): (string | React.ReactElement)[] {
+    const commonTerms = ['Gemini', '76', '70', 'Elbow Method', 'Silhouette Score', '1st Place', 'Top 5 Startup', 'COMEUP 2023', 'Seoul', 'API', 'ETL', 'QA', 'UML', 'REST', 'UI', 'UX', 'AI', 'ML', 'YOLO', 'Keras', 'Python', 'SQL', 'Flutter', 'Firebase', 'Postman', 'KNIME', 'Power BI', 'FastAPI', 'Tailwind', 'Cloudinary', 'Vite', "Co-Founded"];
+    const allKeywords = [...keywords, ...commonTerms].filter((v, i, a) => a.indexOf(v) === i);
+    
+    allKeywords.sort((a, b) => b.length - a.length);
+    
+    const parts: (string | React.ReactElement)[] = [];
+    let lastIndex = 0;
+    let keyIndex = 0;
+    
+    const pattern = new RegExp(`\\b(${allKeywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\b`, 'gi');
+    const matches = Array.from(text.matchAll(pattern));
+    
+    matches.forEach((match) => {
+        const matchIndex = match.index!;
+        const matchText = match[0];
+        
+        if (matchIndex > lastIndex) {
+            parts.push(text.substring(lastIndex, matchIndex));
+        }
+ 
+        parts.push(<strong key={keyIndex++}>{matchText}</strong>);
+        lastIndex = matchIndex + matchText.length;
+    });
+    
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+    }
+    
+    return parts.length > 0 ? parts : [text];
 }
 
 function ExperiencesCardDetail({position, companyName, description, skills}: ExperiencesCardDetailPros) {
@@ -41,12 +74,31 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                 .experiences-card-detail h4 {
                     font-size: 16px;
                 }
+                .description-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .description-container > p {
+                    font-size: 14px;
+                    opacity: 0.6;
+                    transition: opacity 0.2s ease-in-out;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    white-space: normal;
+                    margin: 0;
+                }
+                .description-container > p strong {
+                    font-weight: 700;
+                    opacity: 1;
+                }
                 .experiences-card-detail-content > p {
                     font-size: 14px;
                     opacity: 0.6;
                     transition: opacity 0.2s ease-in-out;
                     word-wrap: break-word;
                     overflow-wrap: break-word;
+                    white-space: normal;
                 }
                 .position-company {
                     display: flex;
@@ -72,8 +124,12 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                     .experiences-card-detail h4 {
                         font-size: 14px;
                     }
-                    .experiences-card-detail-content > p {
+                    .experiences-card-detail-content > p,
+                    .description-container > p {
                         font-size: 13px;
+                        white-space: normal;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
                     }
                     .position-company {
                         gap: 6px;
@@ -86,7 +142,8 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                     .experiences-card-detail h4 {
                         font-size: 13px;
                     }
-                    .experiences-card-detail-content > p {
+                    .experiences-card-detail-content > p,
+                    .description-container > p {
                         font-size: 12px;
                     }
                 }
@@ -105,8 +162,13 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                 .cardExperiencesContainer:hover .position-company h4{
                     font-weight: 700;
                 }
-                .cardExperiencesContainer:hover .experiences-card-detail-content > p {
+                .cardExperiencesContainer:hover .experiences-card-detail-content > p,
+                .cardExperiencesContainer:hover .description-container > p {
                     opacity: 1;
+                }
+                .cardExperiencesContainer:hover .description-container > p strong {
+                    opacity: 1;
+                    font-weight: 700;
                 }
             `}</style>
             <div className='experiences-card-detail'>
@@ -120,7 +182,15 @@ function ExperiencesCardDetail({position, companyName, description, skills}: Exp
                             </>
                         )}
                     </div> 
-                    <p>{description}</p>
+                    <div className="description-container">
+                        {description.split(' - ').map((item, index) => {
+                            const trimmed = item.trim();
+                            if (!trimmed) return null;
+                            // Add bullet point prefix and highlight keywords
+                            const highlightedText = highlightKeywords(trimmed, skills);
+                            return <p key={index}>• {highlightedText}</p>;
+                        })}
+                    </div>
                     <Skills skills={skills} />
                 </div>
             </div>

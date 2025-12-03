@@ -1,11 +1,17 @@
+import { useNavigate } from 'react-router-dom'
 import ImageCardProject from "../Atoms/imagecCardProject"
 import CardExperiences from "../Molecules/cardExperiences"
-import JoinUpImage from "../../assets/projects/JoinUp.png"
-import ChatApplicationImage from "../../assets/projects/ChatApplication.jpg"
-import PortfolioWebsiteImage from "../../assets/projects/portfolio.jpg"
-import ArtifyAIImage from "../../assets/projects/ArtifyAI.jpg"
+import ArtifyAIImage from "../../assets/projects/ArtifyAI.png"
+import MiniAIBotImage from "../../assets/GeminiBot/image_2025-12-03_14-37-58.png"
+import VoltaFootwearImage from "../../assets/E_Commerce/image_2025-12-03_19-03-29.png"
 
 function ProjectContent() {
+  const navigate = useNavigate()
+
+  const handleProjectClick = (projectId: string) => {
+    navigate(`/project/${projectId}`)
+  }
+
   return (
     <div className='project-content'>
       <style>
@@ -26,6 +32,11 @@ function ProjectContent() {
           .cardExperiencesContainer {
             opacity: 0.8;
             padding-top: 20px;
+            cursor: pointer;
+            transition: opacity 0.2s ease-in-out;
+          }
+          .cardExperiencesContainer:hover {
+            opacity: 1;
           }
           @media (max-width: 960px) {
             .project-content {
@@ -52,15 +63,8 @@ function ProjectContent() {
         `}
       </style>
       <h4>PROJECTS</h4>
-      <div className='cardExperiencesContainer'>
-        <ImageCardProject image={PortfolioWebsiteImage} />
-        <CardExperiences 
-          position = 'Portfolio Website' 
-          description = "Modern, responsive portfolio website showcasing work experience and projects. Features with a clean, minimalist design." 
-          skills = {['React', 'Tailwind',  'Vite']} 
-        />
-      </div>  
-      <div className='cardExperiencesContainer'>
+ 
+      <div className='cardExperiencesContainer' onClick={() => handleProjectClick('artify-ai')}>
         <ImageCardProject image={ArtifyAIImage} />
         <CardExperiences 
           position = 'ArtifyAI' 
@@ -68,22 +72,23 @@ function ProjectContent() {
           skills = {['React', 'FastAPI', 'Tailwind',  'Cloudinary']} 
         />
       </div>  
-      <div className='cardExperiencesContainer'>
-        <ImageCardProject image={JoinUpImage} />
+      <div className='cardExperiencesContainer' onClick={() => handleProjectClick('gemini-bot')}>
+        <ImageCardProject image={MiniAIBotImage} />
         <CardExperiences 
-          position = 'JoinUp – Social Events Management App' 
-          description = "Discovering and managing social events with AI-powered natural language queries. Flask backend deployed on Render." 
-          skills = {['Flutter', 'GeminiAI', 'Pickaxe', 'Flask', 'Render']} 
+          position = 'AI Chat Application' 
+          description = "A modern, feature AI chatbot application built with React and FastAPI, powered by Google's Gemini AI. Experience seamless conversations with an intelligent AI assistant through a beautiful, animated user interface." 
+          skills = {['React', 'FastAPI', 'Google Gemini AI']} 
         />
       </div>  
-      <div className='cardExperiencesContainer'>
-        <ImageCardProject image={ChatApplicationImage} />
+      <div className='cardExperiencesContainer' onClick={() => handleProjectClick('volta-footwear')}>
+        <ImageCardProject image={VoltaFootwearImage} />
         <CardExperiences 
-          position = 'Chat Application' 
-          description = "Built web-based chat application with React TypeScript with Vite and Tailwind CSS. Built reusable atomic components following Atomic Design principles to ensure consistency and speed up feature delivery." 
-          skills = {['React', 'Vite', 'Tailwind', 'Firebase']} 
+          position = 'Volta Footwear - E-Commerce Website' 
+          description = "A modern, minimalist e-commerce website for Volta Footwear, featuring a clean design aesthetic and smooth user experience. Built with React and TypeScript." 
+          skills = {['React', 'TypeScript', 'Tailwind CSS', 'React Router']} 
         />
       </div>  
+     
     </div>
   )
 }
