@@ -1114,4 +1114,4 @@ Please change the parent <Route path="${Q}"> to <Route path="${Q==="/"?"*":`${Q}
           .project-detail-not-found button:hover {
             background-color: rgba(99, 46, 46, 0.7);
           }
-        `}),S.jsx("h1",{children:"Project not found"}),S.jsxs("button",{onClick:()=>s("/"),children:[S.jsx(bm,{})," Back to Home"]})]})}function My(){return S.jsxs(gg,{children:[S.jsx(Go,{path:"/",element:S.jsx(py,{})}),S.jsx(Go,{path:"/project/:projectId",element:S.jsx(Ry,{})})]})}z0.createRoot(document.getElementById("root")).render(S.jsx(R.StrictMode,{children:S.jsx(Lg,{children:S.jsx(My,{})})}));
+        `}),S.jsx("h1",{children:"Project not found"}),S.jsxs("button",{onClick:()=>s("/"),children:[S.jsx(bm,{})," Back to Home"]})]})}function My(){return S.jsxs(gg,{children:[S.jsx(Go,{path:"/",element:S.jsx(py,{})}),S.jsx(Go,{path:"/project/:projectId",element:S.jsx(Ry,{})})]})}z0.createRoot(document.getElementById("root")).render(S.jsx(R.StrictMode,{children:S.jsx(Lg,{basename:"/Portfolio",children:S.jsx(My,{})})}));
