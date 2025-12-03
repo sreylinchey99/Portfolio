@@ -166,12 +166,11 @@ function IntroductionPage({ onSectionClick: _onSectionClick, selectedSection, sc
         <div className='TopInto'>
           <h1>Sreylin Chey</h1>
           <h2 style={{paddingTop: '10px'}}>Frontend Developer</h2>
-          <p>I build accessible, pixel-perfect digital experiences for the web.</p>
+          <p>Blending design, code, and AI to create simple, meaningful experiences.</p>
           <div className='ContactInfo'>
             <a href='https://github.com/sreylinchey99' style={{transition: 'opacity 0.2s ease-in-out', opacity:hover?1:0.5}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}><FaGithub /></a>
             <a href='https://www.linkedin.com/in/sreylinchey/' style={{transition: 'opacity 0.2s ease-in-out', opacity:hover?1:0.5}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}><FaLinkedin /></a>
             <a href='mailto:sreylinchey@gmail.com' style={{transition: 'opacity 0.2s ease-in-out', opacity:hover?1:0.5}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}><FaEnvelope /></a>
-            <a href='https://wa.me/85515706665' target='_blank' rel='noopener noreferrer' style={{transition: 'opacity 0.2s ease-in-out', opacity:hover?1:0.5}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}><FaWhatsapp /></a>
             
           </div>
         </div>
